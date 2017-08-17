@@ -1,19 +1,5 @@
-```flow
-st=>start: Start
-i=>inputoutput: 输入年份n
-cond1=>condition: n能否被4整除？
-cond2=>condition: n能否被100整除？
-cond3=>condition: n能否被400整除？
-o1=>inputoutput: 输出非闰年
-o2=>inputoutput: 输出非闰年
-o3=>inputoutput: 输出闰年
-o4=>inputoutput: 输出闰年
-e=>end
-st->i->cond1
-cond1(no)->o1->e
-cond1(yes)->cond2
-cond2(no)->o3->e
-cond2(yes)->cond3
-cond3(yes)->o2->e
-cond3(no)->o4->e
-```
+其实AI这个词在当年定义的时候,其含义就是机器模拟出人类的情感,智能,认知与决策行为的能力;但今天的DL其实只是机器学习的一个分支;并不算真正的AI;而强AI也只是因为AI一词被长年来的研发过程所抢了词儿,所以才分开了强AI;弱AI的区别;
+
+我给你说说我的架构是怎么实现强AI的;然后我是怎么把这个架构实施到代码里的;这中间我读过很多书;关于马文明斯基的,加扎尼加的,还有一些哲学心理学,也查了大量的资料;我是理工生,语言组织可能不太好,但我尽量用节约用词的方式把这个讲明白;
+
+如果你感觉到无趣,随时告诉我,咱们可以中断;
