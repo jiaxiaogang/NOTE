@@ -1,6 +1,6 @@
 - [ ] <font color="red" size="5">YYLabel</font>
 
-```java
+```objective-c
 
 //1,newYYLabel
 YYLabel *openLab = [[YYLabel alloc]init];
@@ -35,11 +35,11 @@ CGFloat openLabH = [self.openLab sizeThatFits:CGSizeMake(ScreenWidth - 32, CGFLO
 [self.openLab setFrame:CGRectMake(0, 0, ScreenWidth - 32, openLabH )];//设置高度
     
 ```
-    
+
 
 - [ ] <font color="red" size="5">YYLabel贝塞尔的代码如下:</font>
 
-```
+```objective-c
 //贝塞尔的代码如下:
 NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:@"asdfasdf"];
 
