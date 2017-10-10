@@ -110,11 +110,13 @@
 2. smg系统直接使用
 
   ```c
-  @try {
-           ((void(*)(id,SEL, id,id))objc_msgSend)(self.funcClass, self.funcSel, nil, nil);
-
-            int returnInt = ((int (*)(id, SEL, NSString *, id))objc_msgSend)((id)self.funcClass, self.funcSel, @"参数1",nil);
-        } @catch (NSException *exception) {} @finally {}
+  @try
+  {
+    //1单执行时
+    ((void(*)(id,SEL, id,id))objc_msgSend)(self.funcClass, self.funcSel, nil, nil);
+    //2执行并返回值时
+    int returnInt = ((int (*)(id, SEL, NSString *, id))objc_msgSend)((id)self.funcClass, self.funcSel, @"参数1",nil);
+  } @catch (NSException *exception) {} @finally {}
   ```
 
 3. smg封装方法使用
@@ -557,16 +559,16 @@ NSObject的forwardInvocation:方法实现只是简单调用了doesNotRecognizeSe
 
 - (BOOL)respondsToSelector:(SEL)aSelector   {
        if ( [super respondsToSelector:aSelector] )
-                return YES;     
+                return YES;
        else {
                  /* Here, test whether the aSelector message can
-                  *            
-                  * be forwarded to another object and whether that  
-                  *            
-                  * object can respond to it. Return YES if it can.  
-                  */      
+                  *
+                  * be forwarded to another object and whether that
+                  *
+                  * object can respond to it. Return YES if it can.
+                  */
        }
-       return NO;  
+       return NO;
 }
 小结
 
