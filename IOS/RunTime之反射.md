@@ -110,13 +110,15 @@
 2. smg系统直接使用
 
   ```c
-  @try
-  {
-    //1单执行时
-    ((void(*)(id,SEL, id,id))objc_msgSend)(self.funcClass, self.funcSel, nil, nil);
-    //2执行并返回值时
-    int returnInt = ((int (*)(id, SEL, NSString *, id))objc_msgSend)((id)self.funcClass, self.funcSel, @"参数1",nil);
-  } @catch (NSException *exception) {} @finally {}
+  -(void) checkParamsClassAndOther{
+    @try
+    {
+      //1单执行时
+      ((void(*)(id,SEL, id,id))objc_msgSend)(self.funcClass, self.funcSel, nil, nil);
+      //2执行并返回值时
+      int returnInt = ((int (*)(id, SEL, NSString *, id))objc_msgSend)((id)self.funcClass, self.funcSel, @"参数1",nil);
+    } @catch (NSException *exception) {} @finally {}
+  }
   ```
 
 3. smg封装方法使用
