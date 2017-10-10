@@ -27,6 +27,7 @@
 
 ## NSInvocation的基本使用
 
+
 1. 根据方法来初始化NSMethodSignature
 
   ```objective-c
@@ -87,6 +88,13 @@
 
   //方法二：
   //可以通过signature.methodReturnType获得返回的类型编码，因此可以推断返回值的具体类型
+  ```
+
+3. 判断signature返回值类型
+
+  ```c
+  const char *returnType = [signature methodReturnType];
+  NSLog(@"返回值的类型 %s",returnType);
   ```
 
 ## objc_msgsend用法
