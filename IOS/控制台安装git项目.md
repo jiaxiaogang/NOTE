@@ -1,0 +1,3 @@
+```
+第一步:(git clone项目) localhost:Desktop jia$ git clone https://github.com/summerblue/baidu-translate-ios-sdk.gitCloning into 'baidu-translate-ios-sdk'...remote: Counting objects: 44, done.remote: Compressing objects: 100% (32/32), done.remote: Total 44 (delta 10), reused 44 (delta 10), pack-reused 0Unpacking objects: 100% (44/44), done.第二步:(cd到项目目录)localhost:Desktop jia$ cd baidu-translate-ios-sdk/第三步:(pod install)localhost:baidu-translate-ios-sdk jia$ pod installRe-creating CocoaPods due to major version update.Analyzing dependenciesFetching podspec for `BaiduTranslate` from `./`Downloading dependenciesInstalling AFNetworking (2.3.1)Installing BaiduTranslate (0.0.1)Installing Mantle (1.5)Generating Pods projectIntegrating client project
+```
