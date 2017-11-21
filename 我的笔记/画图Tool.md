@@ -24,6 +24,6 @@
 |  | title | desc |
 | --- | --- | --- |
 | 1 | OmniGraffle | 打不开 |
-| 2 | 亿图EdrawMax | **** |
+| 2 | 亿图EdrawMax | ***** |
 | 3 | Axure | *** |
-| 4 | Sketch | **** |
+| 4 | Sketch | *** |
