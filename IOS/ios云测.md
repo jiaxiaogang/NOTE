@@ -1,0 +1,10 @@
+| 步骤 >> |  |
+| --- | --- |
+| 1 | ![](assets/3.png) |
+| 2 | Archive |
+| 3 | ![](assets/4.png) |
+| 4 | ![](assets/5.png) |
+| 5 | ![](assets/ios云测-bcf66177.png) |
+| 6 | ![](assets/ios云测-55a98ae3.png) |
+| 7 | ![](assets/ios云测-9b5e792b.png) |
+| 8 | ![](assets/ios云测-7593aa1d.png) |
