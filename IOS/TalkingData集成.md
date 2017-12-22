@@ -35,22 +35,20 @@
 | --- | --- | --- |
 | label | false | true |
 | kv | false | true |
-| count | max | 1k-10k |
-| 灵活性 | 强 | 弱 |
-| 控件范围 | btn checkbox input | 不限 |
+| count | 无限 | 1k-10k条 |
+| 灵活性 | 随时添加 | 需发版 |
+| 控件范围 | 点击(btn checkbox input) | 不限 |
+| 维护人员 | 不限 | 开发者 |
 
 
 
 
-| 集成 >> | 
+| 集成 >> |
 | --- |
 ```c
 #import "TalkingData.h"
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    // App ID: 在 App Analytics 创建应用后，进入数据报表页中，在“系统设置”-“编辑应用”页面里查看App ID。
-    // 渠道 ID: 是渠道标识符，可通过不同渠道单独追踪数据。
     [TalkingData sessionStarted:@"您的 App ID" withChannelId:@"渠道 ID"];
-    //other code
 }
 ```
 
