@@ -16,7 +16,7 @@
 | 2 | 删除文件 | rm fileName.md -f |
 | 3 | 删除目录 | rm folderName -r -f |
 | 4 | 更名 | mv fileOrFolderA fileOrFolderB |
-| 5 | 快速查找文件 | locate fileName | 
+| 5 | 快速查找文件 | locate fileName |
 
 ***
 
@@ -30,7 +30,8 @@
 | 3 | mac->linux上传目录 | jia:~ jia$ scp -r /Users/jia/Desktop/Folder root@111.111.111.111:/root/Folder |  |
 | 4 | mac->linux上传文件 | scp -r /Users/jia/Desktop/MacFile.md root@111.111.111.111:/root/LinuxFile.md |  |
 | 5 | mac->linux下载文件 | scp -r root@180.76.113.98:/root/serviceFileName.md /Users/jia/Desktop/downloadFileName.md |  |
-| 6 | 安装tomcat | yum install tomcat | usr/sbin/tomcat |
+| 6 | 安装tomcat | yum install tomcat | usr/sbin/tomcat(错误) |
+| 7 | 安装tomcat | `cd usr/local` `wget x.gz` `tar -zxv -f x.x.gz` `tomcat/bin/startup.sh` | 正确 |
 
 ***
 
@@ -75,3 +76,4 @@
 |  |  |  |
 | --- | --- | --- |
 | 1 | 访问gitbucket | http://180.76.113.98:8080/gitbucket |
+| 2 | tomcat改端口 | `cd tomcat/conf` `vim server.xml` `找到port8080改成80` |
