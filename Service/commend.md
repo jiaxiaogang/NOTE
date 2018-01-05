@@ -12,7 +12,7 @@
 
 |  |  |  |
 | --- | --- | --- |
-| 1 | 查看目录 | ls -a | 
+| 1 | 查看目录 | ls -a |
 | 2 | 删除文件 | rm fileName.md -f |
 | 3 | 删除目录 | rm folderName -r -f |
 | 4 | 更名 | mv fileOrFolderA fileOrFolderB |
@@ -34,6 +34,7 @@
 | 5 | mac->linux下载文件 | scp -r root@180.76.113.98:/root/serviceFileName.md /Users/jia/Desktop/downloadFileName.md |  |
 | 6 | 安装tomcat | `wget x.gz` `tar -zxv -f x.x.gz` `tomcat/bin/startup.sh` | 正确 |
 | 7 | 安装solo | `将solo.war放到tomcat9/webapps下会自动生成solo文件夹` `cd solo/WEB-INF/classes` `vim latke.properties` `将localhost改成180.76.113.98` | 访问180.76.113.98:8080/solo(注:latke.properties中端口号需与tomcat相同) |
+| 8 | 安装git | yum -y install git |  | 
 
 ***
 
