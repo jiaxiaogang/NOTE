@@ -12,11 +12,13 @@
 
 |  |  |  |
 | --- | --- | --- |
-| 1 | 查看目录 | ls |
+| 1 | 查看目录 | ls -a | 
 | 2 | 删除文件 | rm fileName.md -f |
 | 3 | 删除目录 | rm folderName -r -f |
 | 4 | 更名 | mv fileOrFolderA fileOrFolderB |
 | 5 | 快速查找文件 | locate fileName |
+| 6 | 创建文件夹 | mkdir xxx |
+| 7 | 复制 | cp -r xxx targetFolder |
 
 ***
 
@@ -77,3 +79,4 @@
 | --- | --- | --- |
 | 1 | 访问gitbucket | http://180.76.113.98:8080/gitbucket |
 | 2 | tomcat改端口 | `cd tomcat/conf` `vim server.xml` `找到port8080改成80` |
+| 3 | tomcat改默认目录 | 在server.xml中`/Host>`上一行插入`<Context path="" docBase="../../myWeb" debug="0" reloadable="true" crossContext="true" />` |
