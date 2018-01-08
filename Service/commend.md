@@ -17,8 +17,9 @@
 | 3 | 删除目录 | rm folderName -r -f |
 | 4 | 更名 | mv fileOrFolderA fileOrFolderB |
 | 5 | 快速查找文件 | locate fileName |
-| 6 | 创建文件夹 | mkdir xxx |
-| 7 | 复制 | cp -r xxx targetFolder |
+| 6 | 查找 | where is mysql |
+| 7 | 创建文件夹 | mkdir xxx |
+| 8 | 复制 | cp -r xxx targetFolder |
 
 ***
 
@@ -34,7 +35,9 @@
 | 5 | mac->linux下载文件 | scp -r root@180.76.113.98:/root/serviceFileName.md /Users/jia/Desktop/downloadFileName.md |  |
 | 6 | 安装tomcat | `wget x.gz` `tar -zxv -f x.x.gz` `tomcat/bin/startup.sh` | 正确 |
 | 7 | 安装solo | `将solo.war放到tomcat9/webapps下会自动生成solo文件夹` `cd solo/WEB-INF/classes` `vim latke.properties` `将localhost改成180.76.113.98` | 访问180.76.113.98:8080/solo(注:latke.properties中端口号需与tomcat相同) |
-| 8 | 安装git | yum -y install git |  | 
+| 8 | 安装git | yum -y install git |  |
+| 9 | yum卸载 | yum remove mysql |  |
+|  | 安装mysql(错误) | `yum install -y mysql-server mysql-devel` | http://www.runoob.com/mysql/mysql-install.html `OneNote记录` |
 
 ***
 
