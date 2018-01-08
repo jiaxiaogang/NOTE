@@ -37,7 +37,10 @@
 | 7 | 安装solo | `将solo.war放到tomcat9/webapps下会自动生成solo文件夹` `cd solo/WEB-INF/classes` `vim latke.properties` `将localhost改成180.76.113.98` | 访问180.76.113.98:8080/solo(注:latke.properties中端口号需与tomcat相同) |
 | 8 | 安装git | yum -y install git |  |
 | 9 | yum卸载 | yum remove mysql |  |
-|  | 安装mysql(错误) | `yum install -y mysql-server mysql-devel` | http://www.runoob.com/mysql/mysql-install.html `OneNote记录` |
+| 10 | 安装httpd | `yum -y install httpd*` `httd -v` |  |
+| 11 | 安装mysql | `yum -y install mysql//客户端` `mysql -V` `yum -y install mysql-server  mysql-devel//服务端` |  |
+| 12 | 安装php | `yum -y install php*` `php -v` `/etc/phpMyAdmin/config.inc.php` `vim /etc/httpd/conf.d/phpmyadmin.conf//此处略去一万字` |  |
+| 13 | 安装mariadb | `yum install mariadb-server mariadb ` | http://www.runoob.com/mysql/mysql-install.html |
 
 ***
 
@@ -48,6 +51,7 @@
 | --- | --- | --- |
 | 1 | 解压war | jar -xvf fileName.war |
 | 2 | 解压zip | unzip fileName.war |
+| 3 | 解压gz | tar -zxv -f xxx.tar.gz |
 
 ***
 
