@@ -1,0 +1,15 @@
+| 提示 Dynamic web 3.0错误 >> |
+| --- |
+| 将store-api-web改成2.5;然后自动变成了3.0;问题解决 |
+
+***
+
+| 校验maven依赖下载的情况 >> |
+| --- |
+| 项目右键runAs,maven install;成功则ok |
+
+***
+
+| eclipse指定tomcat >> |
+| --- |
+| 在Preferences-Server-Runtime Environments-Add-Next-选择JRE-完成 |
