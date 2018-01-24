@@ -13,3 +13,15 @@
 | eclipse指定tomcat >> |
 | --- |
 | 在Preferences-Server-Runtime Environments-Add-Next-选择JRE-完成 |
+
+***
+
+| kafka报错 >> |
+| --- |
+| hosts文件修改`参考privateNODE` |
+
+***
+
+| 运行超时 >> |
+| --- |
+| Servers-Tomcat8.5将Timeouts改成大些 |
