@@ -41,6 +41,7 @@
 | 11 | 安装mysql | `yum -y install mysql//客户端` `mysql -V` `yum -y install mysql-server  mysql-devel//服务端` |  |
 | 12 | 安装php | `yum -y install php*` `php -v` `/etc/phpMyAdmin/config.inc.php` `vim /etc/httpd/conf.d/phpmyadmin.conf//此处略去一万字` |  |
 | 13 | 安装mariadb | `yum install mariadb-server mariadb ` | http://www.runoob.com/mysql/mysql-install.html |
+| 14 | 安装tale | `下载http://static.biezhi.me/tale-least.zip` `传到linux解压` `java -jar tale-least.jar` `http://180.76.113.98:9000` |  |
 
 ***
 
