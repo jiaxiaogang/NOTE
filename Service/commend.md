@@ -4,7 +4,7 @@
 |  |  |  |
 | --- | --- | --- |
 | 1 | ssh登录linux | ssh root@180.76.113.98 |
-| 2 | 切换账户 | su username | 
+| 2 | 切换账户 | su username |
 
 ***
 
@@ -90,3 +90,122 @@
 | 1 | 访问gitbucket | http://180.76.113.98:8080/gitbucket |
 | 2 | tomcat改端口 | `cd tomcat/conf` `vim server.xml` `找到port8080改成80` |
 | 3 | tomcat改默认目录 | 在server.xml中`/Host>`上一行插入`<Context path="" docBase="../../myWeb" debug="0" reloadable="true" crossContext="true" />` |
+
+
+***
+
+| 安装ghost blog |
+| --- |
+
+```java
+1. 安装 Node.js 及相关包
+
+  安装 Node.js
+  逐行输入下面的命令进行安装：
+  yum update -y
+  yum groupinstall -y "Development Tools"
+  curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -
+  yum -y install nodejs
+  npm config set registry https://registry.npm.taobao.org
+  npm i -g cnpm
+  安装成功后通过运行node -v及npm -v 出现版本号即可表示安装成功。
+  因为国内网络的关系，也同时安装了 cnpm 模块，后续将使用该命令代替 npm 命令。
+
+  安装 Ghost Client （ghost-cli）
+  cnpm i -g ghost-cli
+  一般而言，安装成功后通过运行 ghost -v，出现版本号即可表示安装成功。但因为国内的网络问题，安装后请检查下终端的 log，如果有出现任意红色报错信息，则证明只有部分安装成功，需要重新执行命令安装。
+  如果不能正常安装请多次执行上面的命令。
+
+*************************
+
+2. 安装 Ghost
+  添加 Ghost 运行用户并创建目录
+  请按行依次输入下面的命令
+  adduser ghost
+  mkdir /var/www
+  mkdir /var/www/ghost
+  chown ghost /var/www/ghost
+
+  安装 Ghost
+  本教程以 SQLite3 作为 Ghost 的数据库。
+  cd /var/www/ghost
+  su ghost
+  ghost install local --db=sqlite3
+  安装成功的截图：
+  [image]
+  如果你安装后不是类似上面的截图，则证明 Ghost-cli 没有安装成功；请重复执行上一步的“安装 Ghost Client”步骤。
+
+  启动 Ghost
+  安装成功后 Ghost 默认就已经启动的了，下面的命令分别是 Ghost 的停止、启动、重启命令，可尝试使用。
+  ghost stop
+  ghost start
+  ghost restart
+  安装成功后默认是运行在http://localhost:2368/，如果需要对外访问，则需要通过 Nginx 进行反向代理。
+
+*************************
+
+3. 安装 Nginx
+
+  添加 Nginx 到 yum 源
+  使用以下命令添加 CentOS 7 Nginx yum 资源库：
+  rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+
+  安装 Nginx
+  yum install -y nginx
+  如无意外，Nginx 将完成安装在你的服务器中。
+  [image]
+
+  启动 Nginx
+  刚安装的 Nginx 不会自行启动，需要通过如下命令启动
+  systemctl start nginx.service
+  如果一切进展顺利的话，现在你可以通过你 IP( http://119.29.103.138/ )来访问你的 Web 页面来预览一下 Nginx 的默认页面。
+  [image]
+  如果看到上面的页面,那么说明你的 CentOS 中的 Nginx 已经正确安装。
+  另外还可以通过systemctl enable nginx.service命令加入开机启动项。
+
+*************************
+
+4. Nginx 配置反向代理
+
+  修改 config 文件
+  请确保 Ghost 已经在运行阶段方可进行如下操作。
+  vi /etc/nginx/conf.d/default.conf
+  运行上面的命令后，再键入 i 然后移动光标在约第七行修改相关文件代码：
+  location / {
+          root   /usr/share/nginx/html;
+          index  index.html index.htm;
+      }
+  改为：
+  location / {
+          proxy_pass http://127.0.0.1:2368;
+          proxy_redirect default;
+          root   /usr/share/nginx/html;
+          index  index.html index.htm;
+      }
+  完成后通过按 ESC ，随后输入 :wq 回车保存。
+  [image]
+  然后运行 nginx -s reload 重启 Nginx。
+
+*************************
+
+5. Ghost 的界面管理
+
+  首页
+  完成了上面的步骤之后，访问http://119.29.103.138/ 就能看到 Ghost 的默认页面变成了如下：
+  [image]
+
+  管理界面
+  访问http://119.29.103.138/ghost 就可以继续相关写作设置了。
+  [image]
+  [image]
+  恭喜，你已经完成了！
+
+*************************
+
+6. 注:使tomcat9中myWeb和nginx的反向代理ghost同时运行
+
+  vi /etc/nginx/conf.d/default.conf
+  将80改成8080
+  重启tomcat
+
+```
