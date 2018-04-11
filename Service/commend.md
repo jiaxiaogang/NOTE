@@ -133,10 +133,11 @@
 | 1. 执行 | `chmod +x helloworld.sh` `./helloworld.sh` |  |
 | 2. 现况 | `ps -ef | grep` | 是查看所有的正在运行的脚本的情况 |
 | 3. 现况 | `ps -ef | grep -a.sh` | 是查看a.sh脚本的运行情况 |
-| 4. 非root目录 | /var/spool/cron/xiaogang |  |
+| 4. 非root目录 | /var/spool/cron/xiaogang | 初始是空的 |
 | 5. root的目录 | etc/crontab |  |
 | 6. 非root编辑任务 | crontab -e |  |
 | 7. 非root查看任务 | crontab -l |  |
+| 8. 查看mail | /var/spool/mail/xiaogang | vi xiaogang |
 
 
 
