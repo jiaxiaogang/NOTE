@@ -351,3 +351,15 @@ minute hour day-of-month month-of-year day-of-week commands
   重启tomcat
 
 ```
+
+
+
+<br><br><br><br><br>
+
+
+## 10. 查看log4j
+
+```
+log4j.appender.logfile=org.apache.log4j.RollingFileAppender
+log4j.appender.logfile.File=D:\\Tomcat 5.5\\logs\\webapp.log
+```
