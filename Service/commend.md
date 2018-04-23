@@ -357,9 +357,14 @@ minute hour day-of-month month-of-year day-of-week commands
 <br><br><br><br><br>
 
 
-## 10. 查看log4j
+## 10. 查看log4j 或 查看文件
 
-```
+```java
 log4j.appender.logfile=org.apache.log4j.RollingFileAppender
 log4j.appender.logfile.File=D:\\Tomcat 5.5\\logs\\webapp.log
+
+cat xxx.txt                         //查看xxx.txt文件
+cat xxx.txt | grep ffiinndd         //查找xxx.txt中包含ffiinndd的内容
+cat xxx.txt | grep 'ffiinndd'       //查找xxx.txt中包含ffiinndd的内容
+cat xxx.txt | grep 'fd' | wc -l 151 //查找xxx.txt中包含fd的内容出现的 `次数行数`;
 ```
