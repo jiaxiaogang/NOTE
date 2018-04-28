@@ -25,3 +25,11 @@
 | 运行超时 >> |
 | --- |
 | Servers-Tomcat8.5将Timeouts改成大些 |
+
+
+***
+
+| 发现Validation xxx.xml很慢 >> |
+| --- |
+| ![](assets/导入ddgsService到eclipse记2-bc441323.png) |
+| 注: 把build下面的对勾去掉;(但如果全去掉,好像又不再及时build;所以自行掂量) |
