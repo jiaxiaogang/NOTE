@@ -19,38 +19,23 @@
 
 
 
-
-
-
-
-
-***
-
-
-
-
-
-
+<br><br><br><br><br>
 
 
 
 
 | 步骤 >> |  |
 | --- | --- |
-| 1 | ![](assets/导入ddgsService到eclipse记-b53aa337.png) |
+| 1 | workspace定位到parent的父目录; ![](assets/导入ddgsService到eclipse记-8ccb4318.png) |
 | 2 | ![](assets/导入ddgsService到eclipse记-c43423ab.png) |
-| 3 | ![](assets/导入ddgsService到eclipse记-f7713645.png) |
+| 3 | 导致maven项目,选择parent;![](assets/导入ddgsService到eclipse记-17bb95ed.png) |
+| 4 | 将子项目,一个一个import as Project; ![](assets/导入ddgsService到eclipse记-d0714b4c.png) |
 
 
 
 
 
-
-
-
-
-***
-
+<br><br><br><br><br>
 
 
 
