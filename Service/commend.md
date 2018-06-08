@@ -368,3 +368,35 @@ cat xxx.txt | grep ffiinndd         //查找xxx.txt中包含ffiinndd的内容
 cat xxx.txt | grep 'ffiinndd'       //查找xxx.txt中包含ffiinndd的内容
 cat xxx.txt | grep 'fd' | wc -l 151 //查找xxx.txt中包含fd的内容出现的 `次数行数`;
 ```
+
+
+
+<br><br><br><br><br>
+
+
+
+## 11. tomcat使用多端口部署多个项目
+
+```xml
+//尝试同一个tomcat,使用不同端口,部多个项目;
+  <Service name="Catalina2">
+    <Connector port="81" protocol="HTTP/1.1"
+                   connectionTimeout="20000"
+                   redirectPort="8443"
+                   URIEncoding="GBK" />
+        <Engine name="Catalina2" defaultHost="localhost">
+          <Realm className="org.apache.catalina.realm.LockOutRealm">  
+            <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+                   resourceName="UserDatabase"/>
+          </Realm>
+
+          <Host name="localhost"  appBase="webapps" unpackWARs="true" autoDeploy="true">
+
+            <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+                   prefix="localhost_access_log" suffix=".txt"
+                   pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+    <Context path="" docBase="../../myWeb2" debug="0" reloadable="true" crossContext="true" />
+          </Host>
+        </Engine>
+      </Service>
+```
