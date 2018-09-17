@@ -102,6 +102,7 @@
 | 1 | 查看进程 | ps |
 | 2 | 查看后台任务 | jobs |
 | 3 | 任务管理器 | top |
+| 4 | 端口占用 | `lsof | wc -l` |
 
 
 
@@ -385,7 +386,7 @@ cat xxx.txt | grep 'fd' | wc -l 151 //查找xxx.txt中包含fd的内容出现的
                    redirectPort="8443"
                    URIEncoding="GBK" />
         <Engine name="Catalina2" defaultHost="localhost">
-          <Realm className="org.apache.catalina.realm.LockOutRealm">  
+          <Realm className="org.apache.catalina.realm.LockOutRealm">
             <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
                    resourceName="UserDatabase"/>
           </Realm>
