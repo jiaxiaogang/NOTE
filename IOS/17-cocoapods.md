@@ -145,3 +145,21 @@ fuby -v
 | --- | --- |
 | 1 | sudo gem update --system |
 | 2 | sudo gem install -n /usr/local/bin cocoapods |
+
+
+| 180929解决pod update太慢问题 >> |  |  |
+| --- | --- | --- |
+| 1 | cd ~/.cocoapods/repos |  |
+| 2 | pod repo remove master | 删master,可以直接到finder删 |
+| 3 | git clone https://git.coding.net/hging/Specs.git master | 用国内库更新快 |
+| 4 | source 'https://git.coding.net/hging/Specs.git' | Podfile文件加一行描述 |
+| 5 | pod install --verbose --no-repo-update | 用后辍命令执行install |
+| 6 | pod update --verbose --no-repo-update | 或update |
+
+| 180929解决pod update慢问题方法2 >> |  |
+| --- | --- |
+| 1 | pod repo remove master |
+| 2 | pod repo add master https://git.oschina.net/6david9/Specs.git |
+| 3 | pod repo update |
+| 4 | Podfile头部指定: source 'https://git.oschina.net/6david9/Specs.git' |
+| 5 | pod update  --verbose --no-repo-update |
