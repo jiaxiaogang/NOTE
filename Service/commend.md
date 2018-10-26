@@ -87,6 +87,7 @@
 | 4 | 杀进程 | kill %psId |
 | 5 | 前台->后台暂停状态 | Ctrl+z |
 | 6 | 后台暂停->运行 | bg %jobnum |
+| 7 | 后台&挂起运行 | nohup java -jar gitbucket.war & |
 
 
 
