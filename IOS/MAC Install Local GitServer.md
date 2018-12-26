@@ -31,12 +31,12 @@
 ## github和gitblit指向到同一项目文件夹;	1.	在gitblit创建projectParent;	2.	在github创建projectSon;	3.	将projectSon放到projectParent文件夹下;然后移projectSon下的.git文件夹到别处去;	4.	将projectSon提交同步到projectParent项目;	5.	将projectSon下的.git移回来;	6.	完成;
  
 
-## 本地仓库:
+## 服务器迁移到本地仓库:
 
 1. 在本地下载祼库:git clone --bare yourGitReposURL
 2. 在本地释放项目目录:git clone your祼库地址
 
-## 服务器仓库:
+## gitbucket迁移到服务器仓库:
 
 1. 在服务器下载祼库:git clone --bare yourGitReposURL
 2. 在本地释放项目目录:git clone root@jiaxiaogang.top:/root/服务器祼库地址/祼库项目名称.git
@@ -45,3 +45,16 @@
 
 1. 下载gitbucket.war: https://github.com/gitbucket/gitbucket
 2. 使用后台挂起java命令跑起来;
+
+## 本地仓库迁移到码云仓库:
+
+1. 在码云创建repos/yourRepos,并取到 https://gitee.com/jiaxiaogang/yourRepos.git
+2. 在本地cd到本地库目录;
+3. git remote rm origin
+4. git remote add origin https://gitee.com/jiaxiaogang/youRepos.git
+5. 提交本地库到码云;
+
+## 服务器库迁移到码云库:
+
+1. 1. 在码云创建repos/yourRepos,并选择来自库地址;
+2. 输入服务端库地址如:http://www.jiaxiaogang.top:8080/git/root/yourRepos.git
