@@ -58,3 +58,43 @@
 
 1. 1. 在码云创建repos/yourRepos,并选择来自库地址;
 2. 输入服务端库地址如:http://www.jiaxiaogang.top:8080/git/root/yourRepos.git
+
+## 更改github库的email,修复绿点不亮的问题
+
+1. cd /Volumes/APPLE\ HDD/work/temp/NOTE
+2. cd.. 到上级文件夹,并创建文件gitUserChange.sh
+3. sh ../gitUserChange.sh `成功时提示:Ref 'refs/heads/master' was rewritten`
+4. git push -u origin master -f `成功时提示:Branch 'master' set up to track remote branch 'master' from 'origin'.`
+
+```sh
+# gitUserChange.sh文件内容
+# #!/bin/sh
+# git filter-branch --env-filter '
+#     an="$GIT_AUTHOR_NAME"
+#     am="$GIT_AUTHOR_EMAIL"
+#     cn="$GIT_COMMITTER_NAME"
+#     cm="$GIT_COMMITTER_EMAIL"
+#
+#     if [ "$GIT_COMMITTER_EMAIL" = "283636001@qq.com" ]
+#     then
+#         cn="jiaxiaogang"
+#         cm="jxg2764894@live.com"
+#     fi
+#     if [ "$GIT_AUTHOR_EMAIL" = "283636001@qq.com" ]
+#     then
+#         an="jiaxiaogang"
+#         am="jxg2764894@live.com"
+#     fi
+#
+#     export GIT_AUTHOR_NAME="$an"
+#     export GIT_AUTHOR_EMAIL="$am"
+#     export GIT_COMMITTER_NAME="$cn"
+#     export GIT_COMMITTER_EMAIL="$cm"
+# '
+git filter-branch -f --env-filter "
+GIT_AUTHOR_NAME='jiaxiaogang';
+GIT_AUTHOR_EMAIL='jxg2764894@live.com';
+GIT_COMMITTER_NAME='jiaxiaogang';
+GIT_COMMITTER_EMAIL='jxg2764894@live.com'
+" HEAD
+```
