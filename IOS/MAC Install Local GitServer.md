@@ -67,34 +67,34 @@
 4. git push -u origin master -f `成功时提示:Branch 'master' set up to track remote branch 'master' from 'origin'.`
 
 ```sh
-# gitUserChange.sh文件内容
-# #!/bin/sh
-# git filter-branch --env-filter '
-#     an="$GIT_AUTHOR_NAME"
-#     am="$GIT_AUTHOR_EMAIL"
-#     cn="$GIT_COMMITTER_NAME"
-#     cm="$GIT_COMMITTER_EMAIL"
-#
-#     if [ "$GIT_COMMITTER_EMAIL" = "283636001@qq.com" ]
-#     then
-#         cn="jiaxiaogang"
-#         cm="jxg2764894@live.com"
-#     fi
-#     if [ "$GIT_AUTHOR_EMAIL" = "283636001@qq.com" ]
-#     then
-#         an="jiaxiaogang"
-#         am="jxg2764894@live.com"
-#     fi
-#
-#     export GIT_AUTHOR_NAME="$an"
-#     export GIT_AUTHOR_EMAIL="$am"
-#     export GIT_COMMITTER_NAME="$cn"
-#     export GIT_COMMITTER_EMAIL="$cm"
-# '
+# gitUserChange.sh文件内容 / 将所有名字邮件都改掉
 git filter-branch -f --env-filter "
 GIT_AUTHOR_NAME='jiaxiaogang';
 GIT_AUTHOR_EMAIL='jxg2764894@live.com';
 GIT_COMMITTER_NAME='jiaxiaogang';
 GIT_COMMITTER_EMAIL='jxg2764894@live.com'
 " HEAD
+```
+
+```sh
+#将所有jia2764894@126.com改成jxg2764894@live.com
+git filter-branch -f --env-filter '
+if [ "$GIT_COMMITTER_EMAIL" = "jia2764894@126.com" ]
+then
+export GIT_COMMITTER_NAME="jiaxiaogang"
+export GIT_COMMITTER_EMAIL="jxg2764894@live.com"
+export GIT_AUTHOR_NAME="jiaxiaogang"
+export GIT_AUTHOR_EMAIL="jxg2764894@live.com"
+fi
+' HEAD
+
+git filter-branch -f --env-filter '
+if [ "$GIT_COMMITTER_EMAIL" = "283636001@126.com" ]
+then
+export GIT_COMMITTER_NAME="jiaxiaogang"
+export GIT_COMMITTER_EMAIL="jxg2764894@live.com"
+export GIT_AUTHOR_NAME="jiaxiaogang"
+export GIT_AUTHOR_EMAIL="jxg2764894@live.com"
+fi
+' HEAD
 ```
