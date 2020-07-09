@@ -163,3 +163,12 @@ fuby -v
 | 3 | pod repo update |
 | 4 | Podfile头部指定: source 'https://git.oschina.net/6david9/Specs.git' |
 | 5 | pod update  --verbose --no-repo-update |
+
+| 20200709重装备忘 | 花括号,表示占位符,替换为正确内容即可; |
+| --- | --- |
+| 1. 安装gem | sudo gem update --system |
+| 2. 查看源 | gem sources -l |
+| 3. 删旧源 | gem sources --remove {占位:2中显示的源,一般是https://rubygems.org/} |
+| 4. 换新源 | gem sources -a https://gems.ruby-china.com/ |
+| 5. 安装pod | sudo gem install -n /usr/local/bin cocoapods |
+| 6. 使用 | 到项目目录下,执行pod update |
