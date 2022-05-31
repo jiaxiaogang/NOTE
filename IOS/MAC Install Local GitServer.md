@@ -54,6 +54,11 @@
 4. git remote add origin https://gitee.com/jiaxiaogang/youRepos.git
 5. 提交本地库到码云;
 
+## 第二种: 迁库命令
+1. cat .git/config
+1. git config remote.origin.url git@gitee.com/youRepos.git
+2. git pull
+
 ## 服务器库迁移到码云库:
 
 1. 1. 在码云创建repos/yourRepos,并选择来自库地址;
